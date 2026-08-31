@@ -65,6 +65,8 @@ footer{border-top:1px solid #252525;padding:28px 22px;color:#888;text-align:cent
   .gallery{grid-template-columns:1fr}
   .gallery img{height:360px}
 }
+
+.order-form{max-width:780px;margin:30px auto 0;text-align:left;background:#101010;border:1px solid #2b2b2b;padding:28px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.order-form label{display:block;color:#ddd;font-size:12px;letter-spacing:.7px;margin-bottom:16px}.order-form input,.order-form select,.order-form textarea{display:block;width:100%;margin-top:7px;background:#080808;border:1px solid #383838;color:#fff;padding:13px;font:14px Arial;border-radius:2px;outline:none}.order-form input:focus,.order-form select:focus,.order-form textarea:focus{border-color:var(--gold)}.order-form textarea{min-height:82px;resize:vertical}.order-form button{cursor:pointer;margin-top:10px}.order-total{font-size:20px;margin:8px 0 12px;color:#ddd}.order-total strong{color:var(--gold2)}.order-status{margin-top:14px;color:var(--gold2);font-size:13px;min-height:20px}
 </style>
 </head>
 <body>
@@ -146,11 +148,25 @@ footer{border-top:1px solid #252525;padding:28px 22px;color:#888;text-align:cent
 
 <section id="order" class="cta">
   <div class="container">
-    <div class="eyebrow">Ready To Wear Your Presence?</div>
-    <h2>Choose your scent.</h2>
-    <p>Message JJ Reserve to check availability, ask about scents, and place your order.</p>
-    <a class="btn" href="https://www.facebook.com/jmmanuel07" target="_blank" rel="noopener">MESSAGE US ON FACEBOOK</a>
-    <a class="btn outline" href="https://www.instagram.com/jmanuel__jn/" target="_blank" rel="noopener">FOLLOW ON INSTAGRAM</a>
+    <div class="eyebrow">JJ Reserve Order Form</div>
+    <h2>Place Your Order.</h2>
+    <p>55ml Eau de Parfum · ₱240 per bottle</p>
+    <form id="orderForm" class="order-form">
+      <div class="form-grid">
+        <label>Full Name<input id="customerName" required placeholder="Your name"></label>
+        <label>Contact Number<input id="customerPhone" required placeholder="09XXXXXXXXX"></label>
+        <label>Choose Scent<select id="scent" required>
+          <option value="">Select a scent</option><option>Versace Eros</option><option>Chanel Bleu</option><option>Invictus</option><option>Aventus Creed</option><option>Eclat Men</option><option>YSL Black Opium</option><option>Bvlgari Amethyst</option><option>Jo Malone English Pear</option><option>Santal 33</option><option>Eclat d'Arpège</option>
+        </select></label>
+        <label>Quantity<input id="quantity" type="number" min="1" value="1" required></label>
+      </div>
+      <label>Delivery Address<textarea id="address" required placeholder="Complete delivery address"></textarea></label>
+      <label>Payment Method<select id="payment" required><option>Cash on Delivery (COD)</option><option>GCash</option><option>Bank Transfer</option></select></label>
+      <label>Notes (optional)<textarea id="notes" placeholder="Special instructions"></textarea></label>
+      <div class="order-total">Total: <strong id="total">₱240</strong></div>
+      <button class="btn" type="submit">ORDER VIA MESSENGER</button>
+      <div id="orderStatus" class="order-status"></div>
+    </form>
   </div>
 </section>
 </main>
@@ -159,5 +175,23 @@ footer{border-top:1px solid #252525;padding:28px 22px;color:#888;text-align:cent
   <div>JJ Reserve · Wear Your Presence</div>
   <div style="margin-top:5px">Inspired fragrances · 55ml Eau de Parfum</div>
 </footer>
+
+<script>
+const PRICE=240;
+const MESSENGER_URL="https://m.me/61592863164849";
+const qty=document.getElementById("quantity"), total=document.getElementById("total");
+function updateTotal(){total.textContent="₱"+(Math.max(1,parseInt(qty.value||1))*PRICE).toLocaleString();}
+qty.addEventListener("input",updateTotal); updateTotal();
+document.getElementById("orderForm").addEventListener("submit",async function(e){
+ e.preventDefault();
+ const orderNo="JJ"+Date.now().toString().slice(-6);
+ const name=document.getElementById("customerName").value.trim(), phone=document.getElementById("customerPhone").value.trim(), scent=document.getElementById("scent").value, quantity=Math.max(1,parseInt(qty.value||1)), address=document.getElementById("address").value.trim(), payment=document.getElementById("payment").value, notes=document.getElementById("notes").value.trim();
+ const amount=quantity*PRICE;
+ const msg=`JJ RESERVE ORDER\nOrder No: ${orderNo}\n--------------------\nName: ${name}\nContact: ${phone}\nScent: ${scent}\nQuantity: ${quantity} bottle(s)\nPrice: ₱${PRICE} each\nTotal: ₱${amount.toLocaleString()}\nPayment: ${payment}\nDelivery Address: ${address}\n${notes?"Notes: "+notes+"\n":""}\nJJ Reserve — Wear Your Presence`;
+ const status=document.getElementById("orderStatus");
+ try{await navigator.clipboard.writeText(msg);status.textContent="Order copied! Messenger is opening… Paste the message and send it.";}catch(err){status.textContent="Messenger is opening… Paste your order details and send it.";}
+ setTimeout(()=>window.open(MESSENGER_URL,"_blank"),400);
+});
+</script>
 </body>
 </html>
