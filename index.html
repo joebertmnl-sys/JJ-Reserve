@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JJ Reserve — Wear Your Presence. Affordable, long-lasting inspired perfumes.">
+<title>JJ Reserve | Wear Your Presence</title>
+<style>
+:root{
+  --black:#070707; --black2:#111; --gold:#d8b45a; --gold2:#f1d58a;
+  --cream:#f7f3ea; --muted:#b8b8b8; --card:#151515;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:var(--black);color:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(7,7,7,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(216,180,90,.18)}
+.nav-inner{max-width:1150px;margin:auto;height:74px;display:flex;align-items:center;justify-content:space-between;padding:0 22px}
+.logo{font-family:Georgia,serif;color:var(--gold);letter-spacing:4px;font-size:22px;font-weight:bold}
+.logo small{display:block;font:10px Arial,sans-serif;letter-spacing:3px;color:#fff;text-align:center;margin-top:-3px}
+.links{display:flex;gap:28px;font-size:13px;color:#ddd}
+.links a:hover{color:var(--gold)}
+.hero{min-height:100vh;padding:130px 22px 70px;display:grid;place-items:center;position:relative;overflow:hidden;background:
+radial-gradient(circle at 75% 45%,rgba(216,180,90,.16),transparent 32%),
+linear-gradient(115deg,#050505 35%,#151515 100%)}
+.hero-inner{max-width:1150px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.eyebrow{color:var(--gold2);letter-spacing:5px;text-transform:uppercase;font-size:12px;margin-bottom:18px}
+h1{font:600 clamp(52px,8vw,92px)/.9 Georgia,serif;letter-spacing:-3px}
+h1 span{color:var(--gold)}
+.hero p{max-width:520px;color:#c9c9c9;margin:25px 0 30px;font-size:17px}
+.btn{display:inline-block;padding:14px 25px;border:1px solid var(--gold);color:#080808;background:var(--gold);font-weight:700;font-size:13px;letter-spacing:1px;margin-right:10px}
+.btn.outline{background:transparent;color:var(--gold)}
+.hero-photo{position:relative}
+.hero-photo img{width:100%;max-height:590px;object-fit:cover;border-radius:4px;filter:saturate(.85);box-shadow:0 30px 80px #000}
+.badge{position:absolute;bottom:20px;left:-18px;background:#0d0d0d;border:1px solid rgba(216,180,90,.45);padding:15px 18px;font-size:12px;letter-spacing:1px}
+section{padding:95px 22px}
+.container{max-width:1150px;margin:auto}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title .eyebrow{margin-bottom:10px}
+h2{font:600 clamp(34px,5vw,52px) Georgia,serif}
+.section-title p{color:var(--muted);margin:12px auto;max-width:650px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid #272727;padding:25px;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(216,180,90,.5)}
+.card .num{font-size:11px;color:var(--gold);letter-spacing:2px}
+.card h3{font:24px Georgia,serif;margin:8px 0}
+.card p{color:#aaa;font-size:14px}
+.tag{display:inline-block;margin-top:16px;border:1px solid #3b3b3b;padding:5px 9px;color:#ddd;font-size:11px}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.gallery img{width:100%;height:480px;object-fit:cover;border-radius:3px}
+.story{background:var(--cream);color:#111}
+.story-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story .eyebrow{color:#8b6a24}
+.story p{color:#444;margin-top:16px}
+.quote{font:italic 30px/1.3 Georgia,serif;border-left:3px solid var(--gold);padding-left:25px}
+.cta{background:linear-gradient(120deg,#0b0b0b,#191919);text-align:center}
+.cta p{color:#aaa;max-width:600px;margin:15px auto 28px}
+footer{border-top:1px solid #252525;padding:28px 22px;color:#888;text-align:center;font-size:12px}
+@media(max-width:800px){
+  .links{display:none}
+  .hero-inner,.story-inner{grid-template-columns:1fr}
+  .hero{padding-top:115px}
+  .hero-photo{order:-1}
+  .grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .gallery img{height:360px}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">JJ<small>RESERVE</small></a>
+    <div class="links">
+      <a href="#collection">Collection</a>
+      <a href="#scents">Scents</a>
+      <a href="#about">About</a>
+      <a href="#order">Order</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Eau de Parfum · 55ml</div>
+      <h1>Wear<br><span>Your Presence.</span></h1>
+      <p>Make every entrance memorable. JJ Reserve brings sophisticated, everyday scents inspired by some of the world's most recognizable fragrance profiles.</p>
+      <a class="btn" href="#collection">EXPLORE COLLECTION</a>
+      <a class="btn outline" href="#order">ORDER NOW</a>
+    </div>
+    <div class="hero-photo">
+      <img src="jj-reserve-men.jpg" alt="JJ Reserve men's perfume collection">
+      <div class="badge">30% OIL · LONG-LASTING INSPIRED SCENTS</div>
+    </div>
+  </div>
+</section>
+
+<section id="collection">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">The Collection</div>
+      <h2>Find Your Signature.</h2>
+      <p>Choose the scent that matches your mood, style, and presence.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="num">MEN 01</div><h3>Versace Eros</h3><p>Fresh, aromatic and confident — made for a bold everyday presence.</p><span class="tag">CONFIDENT</span></article>
+      <article class="card"><div class="num">MEN 02</div><h3>Chanel Bleu</h3><p>Clean, sophisticated and versatile — an easy choice from day to night.</p><span class="tag">SOPHISTICATED</span></article>
+      <article class="card"><div class="num">MEN 03</div><h3>Invictus</h3><p>Fresh and energetic with a sporty character that stands out.</p><span class="tag">ENERGETIC</span></article>
+      <article class="card"><div class="num">MEN 04</div><h3>Aventus Creed</h3><p>Refined and commanding — for moments when you want to be remembered.</p><span class="tag">COMMANDING</span></article>
+      <article class="card"><div class="num">MEN 05</div><h3>Eclat Men</h3><p>Light, fresh and easygoing for a clean daily signature.</p><span class="tag">FRESH</span></article>
+      <article class="card"><div class="num">WOMEN 01</div><h3>YSL Black Opium</h3><p>Warm, alluring and modern — a statement scent for confident nights.</p><span class="tag">ALLURING</span></article>
+      <article class="card"><div class="num">WOMEN 02</div><h3>Bvlgari Amethyst</h3><p>Elegant and graceful with a soft floral character.</p><span class="tag">ELEGANT</span></article>
+      <article class="card"><div class="num">WOMEN 03</div><h3>Jo Malone English Pear</h3><p>Fresh, fruity and effortlessly clean — perfect for a bright day.</p><span class="tag">FRESH</span></article>
+      <article class="card"><div class="num">WOMEN 04</div><h3>Santal 33</h3><p>Woody, distinctive and modern with a memorable signature.</p><span class="tag">WOODY</span></article>
+      <article class="card"><div class="num">WOMEN 05</div><h3>Eclat d'Arpège</h3><p>Soft, floral and timeless for an understated feminine touch.</p><span class="tag">SOFT FLORAL</span></article>
+    </div>
+  </div>
+</section>
+
+<section id="scents" style="padding-top:25px">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">See The Bottles</div>
+      <h2>Simple. Bold. JJ Reserve.</h2>
+    </div>
+    <div class="gallery">
+      <img src="jj-reserve-men.jpg" alt="JJ Reserve men's bottles">
+      <img src="jj-reserve-women.jpg" alt="JJ Reserve women's bottles">
+    </div>
+  </div>
+</section>
+
+<section id="about" class="story">
+  <div class="container story-inner">
+    <div>
+      <div class="eyebrow">Our Philosophy</div>
+      <h2>Presence speaks before words.</h2>
+      <p>JJ Reserve is built for people who want to smell good, feel confident, and leave a lasting impression without making fragrance complicated.</p>
+      <p>Every bottle is made to be part of your everyday routine — whether you're heading to work, going out, or simply want to feel your best.</p>
+    </div>
+    <div class="quote">“You don't need to be the loudest in the room. Let your scent introduce you.”</div>
+  </div>
+</section>
+
+<section id="order" class="cta">
+  <div class="container">
+    <div class="eyebrow">Ready To Wear Your Presence?</div>
+    <h2>Choose your scent.</h2>
+    <p>Message JJ Reserve to check availability, ask about scents, and place your order.</p>
+    <a class="btn" href="https://www.facebook.com/" target="_blank" rel="noopener">MESSAGE US ON FACEBOOK</a>
+    <a class="btn outline" href="https://www.instagram.com/" target="_blank" rel="noopener">FOLLOW ON INSTAGRAM</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div>JJ Reserve · Wear Your Presence</div>
+  <div style="margin-top:5px">Inspired fragrances · 55ml Eau de Parfum</div>
+</footer>
+</body>
+</html>
